@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SV AI Content Agent</title>
+<style>
+body{font-family:Arial;margin:0;background:#0f172a;color:white}
+header{padding:40px;text-align:center;background:#020617}
+h1{font-size:42px;margin:0}
+p{opacity:.85}
+.container{max-width:900px;margin:auto;padding:40px 20px;text-align:center}
+input{padding:12px;width:60%;border-radius:8px;border:none;margin-top:10px}
+button{padding:12px 24px;border:none;border-radius:8px;background:#22c55e;font-weight:bold;margin-left:10px;cursor:pointer}
+.card{background:#1e293b;padding:25px;border-radius:12px;margin-top:30px;text-align:left}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:30px}
+.feature{background:#1e293b;padding:20px;border-radius:10px}
+footer{margin-top:50px;padding:20px;text-align:center;background:#020617}
+</style>
+</head>
+<body>
+
+<header>
+<h1>SV AI Content Agent</h1>
+<p>Generate Instagram captions, hashtags and reel ideas instantly</p>
+</header>
+
+<div class="container">
+
+<h2>Generate Social Media Content</h2>
+<p>Enter a song name and get caption + hashtags</p>
+
+<input id="song" placeholder="Enter song name (example: Tum Hi Ho)" />
+<button onclick="generate()">Generate</button>
+
+<div id="result" class="card" style="display:none"></div>
+
+<div class="features">
+<div class="feature">Instagram Caption Generator</div>
+<div class="feature">Lyrics Post Creator</div>
+<div class="feature">Trending Hashtags</div>
+<div class="feature">Reels & Shorts Ideas</div>
+</div>
+
+</div>
+
+<footer>
+<p>Created by Shiva Gupta | SV AI Tools</p>
+</footer>
+
+<script>
+function generate(){
+
+let song=document.getElementById("song").value
+
+if(!song){
+alert("Please enter song name")
+return
+}
+
+let caption=`✨ ${song} vibes ❤️\n\n"Teri awaaz me hi sukoon milta hai"`
+
+let hashtags="#lyrics #hindisongs #musiclovers #reels #instagramreels #viralreels #lovequotes #songlyrics #trending"
+
+let idea=`Create a reel with romantic background video and display the best lyric line from ${song}.`
+
+let output=`
+<h3>Caption</h3>
+<p>${caption}</p>
+
+<h3>Hashtags</h3>
+<p>${hashtags}</p>
+
+<h3>Reel Idea</h3>
+<p>${idea}</p>
+`
+
+let result=document.getElementById("result")
+result.style.display="block"
+result.innerHTML=output
+}
+</script>
+
+</body>
+</html>
